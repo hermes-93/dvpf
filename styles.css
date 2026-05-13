@@ -31,6 +31,7 @@
 
 html {
   scroll-padding-top: calc(4.5rem + env(safe-area-inset-top, 0px));
+  overflow-x: clip;
 }
 
 body.ed {
@@ -41,6 +42,7 @@ body.ed {
   font-family: var(--font);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  overflow-x: clip;
 }
 
 img {
@@ -80,6 +82,7 @@ a:hover {
   left: 0;
   right: 0;
   z-index: 100;
+  padding-top: env(safe-area-inset-top, 0px);
   background: rgb(0 0 0 / 0.65);
   border-bottom: 1px solid var(--line);
   backdrop-filter: blur(14px);
@@ -132,7 +135,8 @@ a:hover {
 .ed-hero {
   position: relative;
   min-height: auto;
-  padding: calc(4.25rem + clamp(0.5rem, 2vh, 1.5rem)) 0 clamp(5rem, 14vh, 8rem);
+  padding: calc(4.25rem + env(safe-area-inset-top, 0px) + clamp(0.5rem, 2vh, 1.5rem)) 0
+    clamp(3.5rem, 12vh, 8rem);
   background: var(--ed-black);
   overflow: hidden;
 }
@@ -166,7 +170,7 @@ a:hover {
 
 @media (orientation: portrait) {
   .ed-hero__panorama {
-    height: calc(100svh - 5.25rem);
+    height: calc(100svh - 5.25rem - env(safe-area-inset-top, 0px));
   }
 }
 
@@ -1132,12 +1136,83 @@ a:hover {
   }
 }
 
+@media (max-width: 900px) {
+  .ed-about__layout {
+    grid-template-columns: 1fr;
+    gap: clamp(1.25rem, 4vw, 2rem);
+  }
+
+  .ed-about__photo--a,
+  .ed-about__photo--b {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .ed-about__text,
+  .ed-about__text--narrow {
+    grid-column: 1;
+    grid-row: auto;
+    align-self: stretch;
+  }
+
+  .ed-about__text {
+    margin-bottom: 0;
+  }
+
+  .ed-about__text--narrow {
+    padding-top: 0;
+  }
+
+  .ed-about__photo--b {
+    margin-left: 0;
+    margin-top: 0;
+  }
+
+  .ed-about__photo img {
+    min-height: 220px;
+  }
+
+  .ed-about__photo--a img {
+    min-height: clamp(280px, 48vh, 520px);
+  }
+
+  .ed-about__photo--b img {
+    min-height: clamp(200px, 32vw, 360px);
+  }
+}
+
 @media (max-width: 720px) {
+  .ed-topbar__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    padding-left: max(0.75rem, env(safe-area-inset-left, 0px));
+    padding-right: max(0.75rem, env(safe-area-inset-right, 0px));
+  }
+
+  .ed-topbar__mark {
+    order: -1;
+    letter-spacing: 0.14em;
+    font-size: clamp(0.56rem, 3.5vw, 0.68rem);
+  }
+
+  .ed-topbar__nav,
+  .ed-topbar__nav--right {
+    justify-content: center;
+    flex-wrap: wrap;
+    row-gap: 0.4rem;
+    column-gap: clamp(0.4rem, 2.8vw, 0.75rem);
+    font-size: clamp(0.5rem, 3.4vw, 0.62rem);
+    letter-spacing: 0.1em;
+    max-width: 100%;
+  }
+
   .ed-hero__rail--tr {
     top: clamp(0.5rem, 2vh, 1rem);
     right: clamp(0.35rem, 2vw, 0.75rem);
-    max-width: min(200px, 48vw);
-    font-size: 0.52rem;
+    max-width: min(200px, 52vw);
+    font-size: clamp(0.48rem, 2.6vw, 0.52rem);
+    line-height: 1.45;
   }
 
   .ed-hero__rail--vr {
@@ -1147,9 +1222,132 @@ a:hover {
   .ed-hero__strip {
     position: relative;
     bottom: auto;
-    padding-top: 1.5rem;
-    padding-left: clamp(1rem, 4vw, 2.5rem);
-    padding-right: clamp(1rem, 4vw, 2.5rem);
+    padding-top: 1.25rem;
+    padding-left: max(1rem, env(safe-area-inset-left, 0px), 4vw);
+    padding-right: max(1rem, env(safe-area-inset-right, 0px), 4vw);
+    font-size: clamp(0.58rem, 3.2vw, 0.72rem);
+  }
+
+  .ed-about {
+    padding-left: max(1rem, env(safe-area-inset-left, 0px), 4vw);
+    padding-right: max(1rem, env(safe-area-inset-right, 0px), 4vw);
+  }
+
+  .ed-about__head {
+    margin-bottom: clamp(1.25rem, 4vw, 2rem);
+  }
+
+  .ed-prose p {
+    text-align: left;
+    hyphens: manual;
+    font-size: clamp(0.82rem, 3.8vw, 0.95rem);
+  }
+
+  .ed-context__media {
+    padding: clamp(1.25rem, 5vw, 2rem) max(1rem, env(safe-area-inset-left, 0px), 4vw)
+      clamp(1.25rem, 5vw, 2rem) max(1rem, env(safe-area-inset-right, 0px), 4vw);
+  }
+
+  .ed-context__video-shell {
+    width: min(100%, min(380px, 88vw));
+  }
+
+  .ed-context__panel {
+    padding: clamp(1.35rem, 5vw, 2.25rem) max(1rem, env(safe-area-inset-left, 0px), 4vw)
+      clamp(1.35rem, 5vw, 2.25rem) max(1rem, env(safe-area-inset-right, 0px), 4vw);
+  }
+
+  .ed-context__lead {
+    max-width: none;
+    font-size: clamp(0.84rem, 3.6vw, 0.98rem);
+  }
+
+  .ed-slider {
+    padding: clamp(1rem, 3vw, 1.35rem);
+  }
+
+  .ed-slider__slide {
+    padding-right: 0.35rem;
+  }
+
+  .ed-slider__slide-text {
+    max-width: none;
+    font-size: clamp(0.82rem, 3.5vw, 0.95rem);
+  }
+
+  .ed-slider__controls {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+  }
+
+  .ed-slider__dots {
+    order: 3;
+    width: 100%;
+    flex-basis: 100%;
+    justify-content: center;
+  }
+
+  .ed-slider__btn {
+    width: 2.5rem;
+    height: 2.5rem;
+    touch-action: manipulation;
+  }
+
+  .ed-modal {
+    padding: max(0.35rem, env(safe-area-inset-top, 0px)) max(0.35rem, env(safe-area-inset-right, 0px))
+      max(0.35rem, env(safe-area-inset-bottom, 0px)) max(0.35rem, env(safe-area-inset-left, 0px));
+  }
+
+  .ed-modal__dialog {
+    width: 100%;
+    max-width: none;
+    max-height: calc(
+      100dvh - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px) - 0.85rem
+    );
+    border-radius: 0;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .ed-modal__intro {
+    max-width: none;
+    font-size: clamp(0.82rem, 3.5vw, 0.92rem);
+  }
+
+  .ed-img-carousel {
+    padding: 0.5rem;
+  }
+
+  .ed-img-carousel__btn {
+    touch-action: manipulation;
+  }
+
+  .ed-slices__intro {
+    padding-left: max(1rem, env(safe-area-inset-left, 0px), 4vw);
+    padding-right: max(1rem, env(safe-area-inset-right, 0px), 4vw);
+  }
+
+  .ed-slices__title {
+    font-size: clamp(1.65rem, 8vw, 3rem);
+  }
+
+  .ed-recognition {
+    padding-left: max(1rem, env(safe-area-inset-left, 0px), 4vw);
+    padding-right: max(1rem, env(safe-area-inset-right, 0px), 4vw);
+  }
+
+  .ed-recognition__title {
+    font-size: clamp(1.35rem, 7vw, 2.75rem);
+  }
+
+  .ed-rec-card {
+    padding: clamp(1rem, 4vw, 1.35rem);
+  }
+
+  .ed-footer {
+    padding-left: max(1rem, env(safe-area-inset-left, 0px), 4vw);
+    padding-right: max(1rem, env(safe-area-inset-right, 0px), 4vw);
+    padding-bottom: max(1.5rem, env(safe-area-inset-bottom, 0px));
   }
 
   .ed-slices__row {
@@ -1178,6 +1376,15 @@ a:hover {
 
   .ed-recognition__grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) and (orientation: landscape) {
+  .ed-hero__panorama {
+    height: min(
+      calc(100vw * 9 / 16),
+      calc(100svh - 6.25rem - env(safe-area-inset-top, 0px))
+    );
   }
 }
 
