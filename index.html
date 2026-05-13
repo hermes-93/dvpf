@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Элизабет Деви — портфолио</title>
+    <link rel="preload" as="image" href="assets/hero2.jpg" fetchpriority="high" />
+    <meta
+      name="description"
+      content="Элизабет Деви — портфолио дизайнера высокой моды: съёмки, изделия, эскизы, продуктовый дизайн, награды и магистратура."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="ed">
+    <header class="ed-topbar" id="top">
+      <div class="ed-topbar__inner">
+        <nav class="ed-topbar__nav" aria-label="Разделы слева">
+          <a href="#about">обо мне</a>
+          <a href="#recognition">награды</a>
+          <a href="#context">как я работаю</a>
+          <a href="#works">работы</a>
+        </nav>
+        <a class="ed-topbar__mark" href="#top">ELIZABETH DEVY</a>
+        <nav class="ed-topbar__nav ed-topbar__nav--right" aria-label="Разделы справа">
+          <a href="#contact">контакт</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero: assets/hero2.jpg — желательно 16:9, на всю ширину. -->
+      <section
+        class="ed-hero"
+        aria-label="Главный экран портфолио"
+        style="--hero-focal-x: 50%; --hero-focal-y: 42%"
+      >
+        <div class="ed-hero__stage">
+          <div class="ed-hero__panorama-wrap">
+            <figure class="ed-hero__panorama">
+              <img
+                src="assets/hero2.jpg"
+                width="1920"
+                height="1080"
+                alt="Портрет Элизабет Деви для портфолио"
+                fetchpriority="high"
+                decoding="async"
+                class="ed-hero__img"
+              />
+            </figure>
+            <div class="ed-hero__overlay">
+              <p class="ed-hero__rail ed-hero__rail--tr">объекты высокой моды — редакционный ритм</p>
+              <p class="ed-hero__rail ed-hero__rail--vr" aria-hidden="true">
+                силуэт<br />и<br />материал
+              </p>
+            </div>
+          </div>
+          <h1 class="ed-visually-hidden">Элизабет Деви</h1>
+          <p class="ed-hero__strip">
+            работа задаёт современность через нейтральные плоскости и архитектурный силуэт:
+            высокая мода, объекты, съёмки и магистратура — как одна последовательная линия.
+          </p>
+        </div>
+      </section>
+
+      <section class="ed-about" id="about">
+        <div class="ed-about__head">
+          <h2 class="ed-about__title">
+            Об Элизабет Деви
+            <span class="ed-about__title-sub">9</span>
+          </h2>
+        </div>
+
+        <div class="ed-about__layout">
+          <figure class="ed-about__photo ed-about__photo--a">
+            <img
+              src="assets/about.jpg"
+              alt="Элизабет Деви"
+              width="640"
+              height="920"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+
+          <div class="ed-about__text ed-prose">
+            <p>
+              Дизайнер высокой моды и объектов. Съёмки, готовые изделия — головные уборы,
+              сумки, обувь, одежда — эскизы и продуктовые решения объединены одной линией:
+              чистая конструкция и плотный силуэт.
+            </p>
+            <p>
+              Лауреат премий, дипломы и профессиональные отборы. Сейчас — финальная стадия
+              магистратуры по высокой моде: материал, показ и ремесло без декоративного шума.
+            </p>
+          </div>
+
+          <figure class="ed-about__photo ed-about__photo--b">
+            <img
+              src="assets/about2.jpg"
+              alt="Элизабет Деви в работе"
+              width="720"
+              height="480"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+
+          <div class="ed-about__text ed-about__text--narrow ed-prose">
+            <p>
+              Работа ведётся как редакционная серия: каждый проект — отдельный том с
+              собственной пластикой и ритмом кадра. Меньше украшения, больше давления линии.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="ed-recognition" id="recognition" aria-labelledby="recognition-heading">
+        <h2 class="ed-recognition__title" id="recognition-heading">Награды</h2>
+        <div class="ed-recognition__grid">
+          <article class="ed-rec-card">
+            <h3>Диплом бакалавра с отличием</h3>
+            <p>Специальность «Конструирование изделий легкой промышленности»</p>
+          </article>
+          <article class="ed-rec-card">
+            <h3>Победитель «SHOES STYLE 2024»</h3>
+            <p>Конкурс дизайнеров обуви и аксессуаров</p>
+          </article>
+          <article class="ed-rec-card">
+            <h3>Лауреат II степени, направление «мода»</h3>
+            <p>Фестиваль «Московская студенческая весна»</p>
+          </article>
+          <article class="ed-rec-card">
+            <h3>Лауреат «START &amp; BRAND»</h3>
+            <p>Международный конкурс письменных работ</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="ed-context" id="context">
+        <div class="ed-context__media">
+          <!-- Вертикальное видео 9:16 — assets/work.mp4 (основа); work.mov — запас для Safari. Автозапуск при скролле в script.js. -->
+          <div class="ed-context__video-shell">
+            <video
+              class="ed-context__video"
+              controls
+              muted
+              playsinline
+              preload="auto"
+              poster="assets/hero2.jpg"
+              aria-label="Видео о процессе работы Элизабет Деви"
+            >
+              <source src="assets/work.mp4" type="video/mp4" />
+              <source src="assets/work.mov" type="video/quicktime" />
+              <p class="ed-context__video-fallback">
+                Ожидаются <code>assets/work.mp4</code> и при необходимости <code>assets/work.mov</code>. Откройте сайт
+                через локальный сервер (не <code>file://</code>), иначе видео может не стартовать.
+              </p>
+            </video>
+          </div>
+          <p class="ed-context__video-note">
+            Формат ролика: 9:16 (вертикаль) · без звука · <code>work.mp4</code>
+          </p>
+        </div>
+        <div class="ed-context__panel">
+          <p class="ed-context__kicker">Процесс</p>
+          <h2 class="ed-context__title">Как я работаю</h2>
+          <p class="ed-context__lead">
+            Слева — вертикальное видео 9:16 о процессе: ателье, детали, ритм работы. Справа — слайдер с
+            опорными методами: от идеи и эскиза до объекта и съёмки. Листайте блоки ниже.
+          </p>
+
+          <div class="ed-slider" data-slider tabindex="0">
+            <span class="ed-visually-hidden" aria-live="polite" data-slider-live></span>
+            <div class="ed-slider__viewport">
+              <ul class="ed-slider__track">
+                <li class="ed-slider__slide" data-slider-title="Метод">
+                  <h3 class="ed-slider__slide-title">Метод</h3>
+                  <p class="ed-slider__slide-text">
+                    Проекты собираются как редакционные выпуски: жёсткая конструкция, ясный
+                    силуэт и отказ от лишнего шума. Каждый объект или образ проверяется на
+                    целостность линии и вес материала.
+                  </p>
+                </li>
+                <li class="ed-slider__slide" data-slider-title="Материал и ремесло">
+                  <h3 class="ed-slider__slide-title">Материал и ремесло</h3>
+                  <p class="ed-slider__slide-text">
+                    В центре — тактильность и точность исполнения: шляпы, сумки, обувь и
+                    одежда как продолжение одной пластической идеи. Важны посадка, фурнитура
+                    и ручная доводка, а не декоративный эффект ради эффекта.
+                  </p>
+                </li>
+                <li class="ed-slider__slide" data-slider-title="Образ и съёмка">
+                  <h3 class="ed-slider__slide-title">Образ и съёмка</h3>
+                  <p class="ed-slider__slide-text">
+                    Съёмки и эскизы фиксируют характер коллекции: ритм кадра, пластика тела и
+                    работа со светом. Кадр не «украшает» вещь — поддерживает её конструкцию и
+                    настроение.
+                  </p>
+                </li>
+                <li class="ed-slider__slide" data-slider-title="Сейчас">
+                  <h3 class="ed-slider__slide-title">Сейчас</h3>
+                  <p class="ed-slider__slide-text">
+                    Лауреатские премии, дипломы и отборы — опора в поле. Параллельно —
+                    завершение магистратуры по высокой моде: исследование, показовый формат и
+                    синтез практики с теорией.
+                  </p>
+                </li>
+              </ul>
+            </div>
+            <div class="ed-slider__controls">
+              <button type="button" class="ed-slider__btn" data-slider-prev aria-label="Предыдущий слайд">
+                ←
+              </button>
+              <div class="ed-slider__dots" data-slider-dots></div>
+              <button type="button" class="ed-slider__btn" data-slider-next aria-label="Следующий слайд">
+                →
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="ed-slices"
+        id="works"
+        aria-label="Направления работ"
+        style="--hero-img: url('assets/hero.jpg')"
+      >
+        <header class="ed-slices__intro">
+          <h2 class="ed-slices__title">Мое портфолио</h2>
+          <p class="ed-slices__note">
+            В каждой колонке — статичное превью из проектов этого направления. Нажмите на полосу — откроется
+            окно с полным описанием и слайдером. Наведите — белая обводка.
+          </p>
+        </header>
+
+        <div class="ed-slices__row">
+          <button
+            type="button"
+            class="ed-slice ed-slice--narrow"
+            data-portfolio="footwear"
+            aria-haspopup="dialog"
+            aria-controls="ed-portfolio-modal"
+            aria-label="Открыть работы: обувь"
+          >
+            <span class="ed-slice__halves">
+              <span class="ed-slice__half ed-slice__half--top ed-slice__pos--4t"></span>
+              <span class="ed-slice__half ed-slice__half--bottom ed-slice__pos--4b"></span>
+            </span>
+            <span class="ed-slice__vertical">обувь</span>
+          </button>
+          <button
+            type="button"
+            class="ed-slice"
+            data-portfolio="bags"
+            aria-haspopup="dialog"
+            aria-controls="ed-portfolio-modal"
+            aria-label="Открыть работы: сумки"
+          >
+            <span class="ed-slice__halves">
+              <span class="ed-slice__half ed-slice__half--top ed-slice__pos--3t"></span>
+              <span class="ed-slice__half ed-slice__half--bottom ed-slice__pos--3b"></span>
+            </span>
+            <span class="ed-slice__vertical">сумки</span>
+          </button>
+          <button
+            type="button"
+            class="ed-slice"
+            data-portfolio="garments"
+            aria-haspopup="dialog"
+            aria-controls="ed-portfolio-modal"
+            aria-label="Открыть работы: одежда"
+          >
+            <span class="ed-slice__halves">
+              <span class="ed-slice__half ed-slice__half--top ed-slice__pos--5t"></span>
+              <span class="ed-slice__half ed-slice__half--bottom ed-slice__pos--5b"></span>
+            </span>
+            <span class="ed-slice__vertical">одежда</span>
+          </button>
+          <button
+            type="button"
+            class="ed-slice ed-slice--wide"
+            data-portfolio="millinery"
+            aria-haspopup="dialog"
+            aria-controls="ed-portfolio-modal"
+            aria-label="Открыть работы: шляпы"
+          >
+            <span class="ed-slice__halves">
+              <span class="ed-slice__half ed-slice__half--top ed-slice__pos--2t"></span>
+              <span class="ed-slice__half ed-slice__half--bottom ed-slice__pos--2b"></span>
+            </span>
+            <span class="ed-slice__vertical">шляпы</span>
+          </button>
+          <button
+            type="button"
+            class="ed-slice"
+            data-portfolio="shootings"
+            aria-haspopup="dialog"
+            aria-controls="ed-portfolio-modal"
+            aria-label="Открыть работы: съёмки"
+          >
+            <span class="ed-slice__halves">
+              <span class="ed-slice__half ed-slice__half--top"></span>
+              <span class="ed-slice__half ed-slice__half--bottom"></span>
+            </span>
+            <span class="ed-slice__vertical">съёмки</span>
+          </button>
+          <button
+            type="button"
+            class="ed-slice ed-slice--accent"
+            data-portfolio="sketches"
+            aria-haspopup="dialog"
+            aria-controls="ed-portfolio-modal"
+            aria-label="Открыть работы: эскизы"
+          >
+            <span class="ed-slice__halves">
+              <span class="ed-slice__half ed-slice__half--top ed-slice__pos--6t"></span>
+              <span class="ed-slice__half ed-slice__half--bottom ed-slice__pos--6b"></span>
+            </span>
+            <span class="ed-slice__vertical">эскизы</span>
+          </button>
+        </div>
+      </section>
+
+      <footer class="ed-footer" id="contact">
+        <div class="ed-footer__top">
+          <div class="ed-footer__cols">
+            <div>
+              <p class="ed-footer__label">Контакт</p>
+              <p>
+                <a
+                  href="https://www.instagram.com/elizabethdevy.9/"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  >Инстаграм: @elizabethdevy.9</a
+                >
+              </p>
+            </div>
+            <div>
+              <p class="ed-footer__label">Соцсети</p>
+              <p>
+                <a
+                  href="https://www.instagram.com/elizabethdevy.9/"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  >Инстаграм — @elizabethdevy.9</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="ed-footer__mega" aria-hidden="true">
+          <span>Элизабет</span>
+          <span>Деви</span>
+        </div>
+        <p class="ed-footer__copy">© Элизабет Деви · 2026</p>
+      </footer>
+    </main>
+
+    <div class="ed-modal" hidden data-portfolio-modal>
+      <div class="ed-modal__backdrop" data-modal-close tabindex="-1" aria-hidden="true"></div>
+      <div
+        class="ed-modal__dialog"
+        id="ed-portfolio-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="ed-modal-title"
+      >
+        <button type="button" class="ed-modal__close" data-modal-close aria-label="Закрыть">
+          ×
+        </button>
+        <h2 class="ed-modal__title" id="ed-modal-title"></h2>
+        <p class="ed-modal__intro"></p>
+        <div class="ed-modal__works" data-modal-works></div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
